@@ -1,4 +1,6 @@
-# programming-cheatsheet
+# Programming Cheatsheet
+
+This repo contains useful tips which are sometimes needed during programming.
 
 # Table of Contents
 
