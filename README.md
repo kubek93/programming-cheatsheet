@@ -4,7 +4,6 @@
 
 - [Bash](#bash)
   - [Running multiple commands in one line in shell](#running-multiple-commands-in-one-line-in-shell)
-)
 
 ## Bash 
 
