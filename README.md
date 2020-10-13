@@ -3,9 +3,20 @@
 This repo contains useful tips which are sometimes needed during programming.
 
 # Table of Contents
-
+- [Git]
+  - [Tag commit and push it](#tag-commit-and-push-it)
 - [Bash](#bash)
   - [Running multiple commands in one line in shell](#running-multiple-commands-in-one-line-in-shell)
+
+## Git
+
+### Tag commit and push it
+
+example:
+```bash
+git tag v1.7.7-beta.20 d43bab9
+git push origin master --tags
+```
 
 ## Bash 
 
