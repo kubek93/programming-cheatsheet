@@ -3,7 +3,7 @@
 This repo contains useful tips which are sometimes needed during programming.
 
 # Table of Contents
-- [Git]
+- [Git](#git)
   - [Tag commit and push it](#tag-commit-and-push-it)
 - [Bash](#bash)
   - [Running multiple commands in one line in shell](#running-multiple-commands-in-one-line-in-shell)
