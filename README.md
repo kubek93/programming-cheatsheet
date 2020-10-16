@@ -4,7 +4,7 @@ This repo contains useful tips which are sometimes needed during programming.
 
 # Table of Contents
 - [Linux](#linux)
-  - [xargs - Using subshell with xargs and docker](#xargs)
+  - [xargs - Using subshell with xargs and docker](#xargs---using-subshell-with-xargs-and-docker)
 - [Git](#git)
   - [Tag commit and push it](#tag-commit-and-push-it)
 - [Bash](#bash)
