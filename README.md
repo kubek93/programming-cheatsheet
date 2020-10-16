@@ -3,10 +3,22 @@
 This repo contains useful tips which are sometimes needed during programming.
 
 # Table of Contents
+- [Linux](#linux)
+  - [xargs - Using subshell with xargs and docker](#xargs)
 - [Git](#git)
   - [Tag commit and push it](#tag-commit-and-push-it)
 - [Bash](#bash)
   - [Running multiple commands in one line in shell](#running-multiple-commands-in-one-line-in-shell)
+
+## Linux 
+
+### xargs - Using subshell with xargs and docker
+
+> Returned text from first execution will be passed to the second command
+
+```bash
+$ docker images artifactory.mrgreen.tech/docker/gametek/sportsbook/sb-mfe:latest -q | xargs docker stop
+```
 
 ## Git
 
@@ -14,8 +26,8 @@ This repo contains useful tips which are sometimes needed during programming.
 
 example:
 ```bash
-git tag v1.7.7-beta.20 d43bab9
-git push origin master --tags
+$ git tag v1.7.7-beta.20 d43bab9
+$ git push origin master --tags
 ```
 
 ## Bash 
