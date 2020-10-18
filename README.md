@@ -23,6 +23,42 @@ This repo contains useful tips which are sometimes needed during programming.
 $ docker images artifactory.mrgreen.tech/docker/gametek/sportsbook/sb-mfe:latest -q | xargs docker stop
 ```
 
+### Usefull commands
+
+```bash
+$ updatedb 
+$ locate [file]
+$ passwd
+$ man [command]
+$ [command] --help
+```
+
+### Users and privilages
+
+```bash
+-rw-r--r--@  1 kubek  staff  20484 Oct 18 15:28 some_file.txt
+drwxr-xr-x  19 kubek  staff    608 Oct 18 15:28 some_folder
+```
+
+First letter says about `-` file or `d` folder (directory). Next are tell us about access to this specific file/folder. 
+
+| # |        Permission       | rwx | Binary |
+|:-:|:-----------------------:|:---:|:------:|
+| 7 | read, write and execute | rwx | 111    |
+| 6 | read and write          | rw- | 110    |
+| 5 | read and execute        | r-x | 101    |
+| 4 | read only               | r-- | 100    |
+| 3 | write and execute       | -wx | 011    |
+| 2 | write only              | -w- | 010    |
+| 1 | execute only            | --x | 001    |
+| 0 | none                    | --- | 000    |
+
+You can modify access using command `chmod`, fe.
+
+```bash
+$ chmod 0664 sharedFile
+```
+
 ### Update grub 
 
 ```bash
