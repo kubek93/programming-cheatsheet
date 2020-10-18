@@ -23,6 +23,12 @@ This repo contains useful tips which are sometimes needed during programming.
 $ docker images artifactory.mrgreen.tech/docker/gametek/sportsbook/sb-mfe:latest -q | xargs docker stop
 ```
 
+### Update grub 
+
+```bash
+$ sudo update-grub
+```
+
 ## Git
 
 ### Tag commit and push it
