@@ -9,6 +9,9 @@ This repo contains useful tips which are sometimes needed during programming.
   - [Tag commit and push it](#tag-commit-and-push-it)
 - [Bash](#bash)
   - [Running multiple commands in one line in shell](#running-multiple-commands-in-one-line-in-shell)
+- [Docker](#docker)
+  - Stop all containers
+  - Remove all containers
 
 ## Linux 
 
@@ -41,3 +44,17 @@ $ git push origin master --tags
 - `;` executes the right-hand command of ; always regardless whether the previous command succeeded or failed. Unless set -e was previously invoked, which causes bash to fail on an error.
 
 [stackoverflow question](https://stackoverflow.com/questions/5130847/running-multiple-commands-in-one-line-in-shell)
+
+## Docker
+
+### Stop all containers
+
+```bash
+docker kill $(docker ps -q)
+```
+
+### Remove all containers
+
+```bash
+docker rm $(docker ps -a -q)
+```
