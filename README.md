@@ -5,6 +5,10 @@ This repo contains useful tips which are sometimes needed during programming.
 # Table of Contents
 - [Linux](#linux)
   - [xargs - Using subshell with xargs and docker](#xargs---using-subshell-with-xargs-and-docker)
+  - Update grub 
+  - Manage users and privilages
+    - Commands
+    - Read More
 - [Git](#git)
   - [Tag commit and push it](#tag-commit-and-push-it)
 - [Bash](#bash)
@@ -33,7 +37,13 @@ $ man [command]
 $ [command] --help
 ```
 
-### Users and privilages
+### Update grub 
+
+```bash
+$ sudo update-grub
+```
+
+### Manage users and privilages
 
 ```bash
 -rw-r--r--@  1 kubek  staff  20484 Oct 18 15:28 some_file.txt
@@ -59,11 +69,18 @@ You can modify access using command `chmod`, fe.
 $ chmod 0664 sharedFile
 ```
 
-### Update grub 
+#### Commands
 
 ```bash
-$ sudo update-grub
+$ adduser [user name] #add new user to the system
+$ cat /etc/passwd #show users
+$ cat /etc/shadow #show users and passwords
+$ su [user-name] #switch to provided user
 ```
+
+#### Read more
+
+[Shadow Passwords](https://www.cyberciti.biz/faq/understanding-etcshadow-file)
 
 ## Git
 
