@@ -81,6 +81,36 @@ $ su [user-name] #switch to provided user
 #### Read more
 
 [Shadow Passwords](https://www.cyberciti.biz/faq/understanding-etcshadow-file)
+[Crack users passwords](https://null-byte.wonderhowto.com/how-to/crack-shadow-hashes-after-getting-root-linux-system-0186386/)
+
+### Manage networks
+
+```bash
+$ ifconfig #shows you network interfaces available for you
+$ iwconfig #shows you only wireless adapters
+$ ping [server-ip-address]
+$ arp -a
+$ netstat -ano #shows you connections which are running on you machine
+$ router #shows you routing table - where you traffic is exit essentially 
+```
+
+### Manage files (create|modify|remove)
+
+```bash
+$ nano new-file.txt
+$ touch new-file.txt
+$ gedit new-file.txt
+$ echo "tekst" > new-file.txt #create file and override with text
+$ echo "tekst" >> new-file.txt #create file and save text at the bottom of file 
+```
+
+### Manage services (start|stop)
+
+```bash
+$ service apache2 start #start apache server
+$ python -m SimpleHTTPServer 80 #run python server which is smiler than apatche and can be run in every folder
+$ systemctl enable postgresq #run for example postgres database not only fot that session but also after reboot machine
+```
 
 ## Git
 
