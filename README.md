@@ -22,32 +22,32 @@ This repo contains useful tips which are sometimes needed during programming.
 
 ### Folders structure
 
-`/bin` binaries - programs or applications (cat, ls, cp)
-`/sbin` system binaries
-`/boot` - bootloader, everything what system needs to start running
-`/dev` - where devices lives, 
-  `/char`
-  `/sda` - sda1, sda2
-`/etc` - storing configuration (sources.list, cron, application settings)
-`/home` - contains users home folders, for personal files and documents
-`/lib` - libraries
-`/media` - usually systems mount drivers automaticaly here (pendrives, cdroms)
-`/mnt` mount - folder to mount manually all drivers (pendrives, cdroms, network drives)
-`/opt` optional - folder to manual install software (virtualbox, printer software)
-`/proc` - sudo files, for system processes
-`/root` - root user home folder
-`/run` - tempfs files system, files to faster start system
-`/snap`
-`/srv` - service directory (ftp server, http server)
-`/sys` system - similar to `/run` directory, installed during the boot start system
-`/tmp` temporary - temporary director for programs during session, you can recover something from there
-`/usr` user - user applications
- `/local`
- `/src`
- `/share`
-`/var` - variable directory
-  `/crash`
-  `/logs` for system and any diffrent applications
+- `/bin` binaries - programs or applications (cat, ls, cp)
+- `/sbin` system binaries
+- `/boot` - bootloader, everything what system needs to start running
+- `/dev` - where devices lives, 
+  - `/char`
+  - `/sda` - sda1, sda2
+- `/etc` - storing configuration (sources.list, cron, application settings)
+- `/home` - contains users home folders, for personal files and documents
+- `/lib` - libraries
+- `/media` - usually systems mount drivers automaticaly here (pendrives, cdroms)
+- `/mnt` mount - folder to mount manually all drivers (pendrives, cdroms, network drives)
+- `/opt` optional - folder to manual install software (virtualbox, printer software)
+- `/proc` - sudo files, for system processes
+- `/root` - root user home folder
+- `/run` - tempfs files system, files to faster start system
+- `/snap`
+- `/srv` - service directory (ftp server, http server)
+- `/sys` system - similar to `/run` directory, installed during the boot start system
+- `/tmp` temporary - temporary director for programs during session, you can recover something from there
+- `/usr` user - user applications
+ - `/local`
+ - `/src`
+ - `/share`
+- `/var` - variable directory
+  - `/crash`
+  - `/logs` for system and any diffrent applications
  
 ### xargs - Using subshell with xargs and docker
 
