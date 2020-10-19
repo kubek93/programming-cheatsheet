@@ -10,6 +10,7 @@ This repo contains useful tips which are sometimes needed during programming.
   - Manage users and privilages
     - Commands
     - Read More
+  - Zip/Unzip files
 - [Git](#git)
   - [Tag commit and push it](#tag-commit-and-push-it)
 - [Bash](#bash)
@@ -97,6 +98,14 @@ You can modify access using command `chmod`, fe.
 
 ```bash
 $ chmod 0664 sharedFile
+```
+
+### Zip/Unzip files
+
+```bash
+$ zip -r filename.zip /home/folder/*
+$ unzip html.zip ./
+$ mv ./html/* /home/dazdyqephu/domains/ohsospecial.nl/public_html/
 ```
 
 #### Commands
