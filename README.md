@@ -29,7 +29,7 @@ This repo contains useful tips which are sometimes needed during programming.
 
 ```bash
 $ sudo lsof -i :3000
-$ kill -9 <PID>
+$ kill -9 <PID> # kill -15 gives the process a chance to clean up after itself
 ```
 
 ## Firebase
