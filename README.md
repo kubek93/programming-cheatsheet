@@ -34,6 +34,10 @@ $ kill -9 <PID> # kill -15 gives the process a chance to clean up after itself
 
 ## Firebase
 
+### CLI Commands
+
+[CLI Documentation](https://firebase.google.com/docs/cli)
+
 ### Run local functions using different port
 
 ```bash
