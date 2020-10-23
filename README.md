@@ -3,6 +3,10 @@
 This repo contains useful tips which are sometimes needed during programming.
 
 # Table of Contents
+- Mac OS
+  - Find and kill process
+- Firebase
+  - Run local functions using different port
 - [Linux](#linux)
   - Folders structure
   - [xargs - Using subshell with xargs and docker](#xargs---using-subshell-with-xargs-and-docker)
@@ -18,6 +22,23 @@ This repo contains useful tips which are sometimes needed during programming.
 - [Docker](#docker)
   - Stop all containers
   - Remove all containers
+
+## Mac OS
+
+### Find and kill process
+
+```bash
+$ sudo lsof -i :3000
+$ kill -9 <PID>
+```
+
+## Firebase
+
+### Run local functions using different port
+
+```bash
+$ firebase serve --only functions --port=9000
+```
 
 ## Linux 
 
