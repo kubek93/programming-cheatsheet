@@ -3,6 +3,8 @@
 This repo contains useful tips which are sometimes needed during programming.
 
 # Table of Contents
+- General Programmimng
+  - What are the different kinds of cases?
 - Mac OS
   - Find and kill process
 - Firebase
@@ -22,6 +24,16 @@ This repo contains useful tips which are sometimes needed during programming.
 - [Docker](#docker)
   - Stop all containers
   - Remove all containers
+
+## General Programmimng
+
+### What are the different kinds of cases?
+
+- `Pascal Case` (Used for Class) => `MyVariable`
+- `Camel Case` (Used for variable at Java, C#, etc.) => `myVariable`
+- `Flat Case` (Used for package at Java, etc.) => `myvariable`
+- `Snake Case` (Used for variable at Python, PHP, etc.) => `my_variable`
+- `Kebab Case` (Used for css) => `my-variable`
 
 ## Mac OS
 
