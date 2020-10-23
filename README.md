@@ -34,6 +34,8 @@ $ kill -9 <PID> # kill -15 gives the process a chance to clean up after itself
 
 ## Firebase
 
+[Sapmles of functions](https://github.com/firebase/functions-samples)
+
 ### CLI Commands
 
 [CLI Documentation](https://firebase.google.com/docs/cli)
