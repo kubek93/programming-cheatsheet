@@ -10,6 +10,7 @@ This repo contains useful tips which are sometimes needed during programming.
 - Firebase
   - Run local functions using different port
 - [Linux](#linux)
+  - Linux Commands
   - Folders structure
   - [xargs - Using subshell with xargs and docker](#xargs---using-subshell-with-xargs-and-docker)
   - Update grub 
@@ -59,6 +60,10 @@ $ firebase serve --only functions --port=9000
 ```
 
 ## Linux 
+
+### Linux Commands
+
+[GO TO](/kubek93/programming-cheatsheet/blob/main/linux-commands.md) Linux Commands
 
 ### Folders structure
 
