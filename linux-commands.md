@@ -1,3 +1,9 @@
+# Linux Commands
+
+## Links
+
+[Command Cheat Sheet](https://lira.epac.to/DOCS-TECH/Hacking/KALI%20LINUX%20COMMANDS.pdf)
+
 | command |        descripion       |
 |:-------:|:-----------------------:|
 | apt-get | Search for and install software packages (Debian) |
