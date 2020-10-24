@@ -63,7 +63,7 @@ $ firebase serve --only functions --port=9000
 
 ### Linux Commands
 
-[GO TO](/kubek93/programming-cheatsheet/blob/main/linux-commands.md) Linux Commands
+[GO TO](/linux-commands.md) Linux Commands
 
 ### Folders structure
 
