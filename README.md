@@ -4,6 +4,7 @@ This repo contains useful tips which are sometimes needed during programming.
 
 # Table of Contents
 - General Programmimng
+  - Example of `README.md`
   - What are the different kinds of cases?
 - Mac OS
   - Find and kill process
@@ -27,6 +28,10 @@ This repo contains useful tips which are sometimes needed during programming.
   - Remove all containers
 
 ## General Programmimng
+
+### Example of `README.md` file
+
+[GO TO](/README-example.md) File Example
 
 ### What are the different kinds of cases?
 
