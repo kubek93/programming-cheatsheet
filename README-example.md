@@ -4,8 +4,10 @@ Project description
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Current Application Directory Structure](#current-application-directory-structure)
+- [Project Name](#project-name)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Current Application Directory Structure](#current-application-directory-structure)
 
 ## Installation
 
