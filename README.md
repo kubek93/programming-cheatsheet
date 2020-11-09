@@ -20,6 +20,8 @@ This repo contains useful tips which are sometimes needed during programming.
     - Commands
     - Read More
   - Zip/Unzip files
+- [npm](#npm)
+  - [Show installed npm packages](#show-installed-npm-packages)
 - [Git](#git)
   - [Tag commit and push it](#tag-commit-and-push-it)
 - [Bash](#bash)
@@ -203,6 +205,18 @@ $ echo "tekst" >> new-file.txt #create file and save text at the bottom of file
 $ service apache2 start #start apache server
 $ python -m SimpleHTTPServer 80 #run python server which is smiler than apatche and can be run in every folder
 $ systemctl enable postgresq #run for example postgres database not only fot that session but also after reboot machine
+```
+
+## npm
+
+### Show installed npm packages
+
+You probably have some packages installed globally already on your system. You can see them by typing:
+
+```bash
+$ npm list --depth 0 # for local project
+
+$ npm list -g --depth 0 # for global npm
 ```
 
 ## Git
