@@ -17,6 +17,7 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Run local functions using different port](#run-local-functions-using-different-port)
   - [Linux](#linux)
     - [Linux Commands](#linux-commands)
+    - [Envs](#envs)
     - [Folders structure](#folders-structure)
     - [xargs - Using subshell with xargs and docker](#xargs---using-subshell-with-xargs-and-docker)
     - [Usefull commands](#usefull-commands)
@@ -29,12 +30,17 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Manage files (create|modify|remove)](#manage-files-createmodifyremove)
     - [Manage services (start|stop)](#manage-services-startstop)
   - [npm](#npm)
+    - [Packages installation flags for `npm install` command](#packages-installation-flags-for-npm-install-command)
     - [Show installed npm packages](#show-installed-npm-packages)
     - [Print the folder where npm will install executables](#print-the-folder-where-npm-will-install-executables)
+    - [Try to run package from the nearest (or local project) executor](#try-to-run-package-from-the-nearest-or-local-project-executor)
     - [Symlink a package folder](#symlink-a-package-folder)
   - [Git](#git)
+    - [Popular commands](#popular-commands)
     - [Tag commit and push it](#tag-commit-and-push-it)
   - [Bash](#bash)
+    - [ZSH and oh-my-zsh - Make bash more intuitive and usefull](#zsh-and-oh-my-zsh---make-bash-more-intuitive-and-usefull)
+    - [Add auto suggestions and shell syntax highlight](#add-auto-suggestions-and-shell-syntax-highlight)
     - [Running multiple commands in one line in shell](#running-multiple-commands-in-one-line-in-shell)
   - [Docker](#docker)
     - [Stop all containers](#stop-all-containers)
@@ -86,6 +92,13 @@ firebase serve --only functions --port=9000
 ### Linux Commands
 
 [GO TO](/linux-commands.md) Linux Commands
+
+whoami,
+
+### Envs
+
+echo $SHELL
+echo #ZSH
 
 ### Folders structure
 
@@ -219,6 +232,18 @@ systemctl enable postgresq #run for example postgres database not only fot that 
 
 ## npm
 
+### Packages installation flags for `npm install` command
+
+`common options: [
+    -P|--save-prod|
+    -D|--save-dev|
+    -O|--save-optional
+    -E|--save-exact
+    -B|--save-bundle
+    --no-save
+    --dry-run
+]`
+
 ### Show installed npm packages
 
 You probably have some packages installed globally already on your system. You can see them by typing:
@@ -235,9 +260,17 @@ ls `npm root -g`
 
 ### Print the folder where npm will install executables
 
-```bash
+```sh
 npm bin
 ```
+
+### Try to run package from the nearest (or local project) executor
+
+```sh
+$(npm bin)/package_name
+```
+
+[run-locally-installed-npm-packages-without-global-install](https://www.rockyourcode.com/run-locally-installed-npm-packages-without-global-install/)
 
 ### Symlink a package folder
 
@@ -249,9 +282,42 @@ npm link package_name
 
 ## Git
 
-### Tag commit and push it
+### Popular commands
 
-example:
+```sh
+git branch  -a #show all branches
+            -D #remove branch force
+
+git branch <branch_name> #create new branch
+
+git push origin -d <remote_branch> #remove remote branch
+
+git checkout <branch_name> #swich branch
+git checkout -b <branch_name> #create branch and switch
+
+git checkout -b test origin/<remote_branch>
+git checkout -t origin/<remote_branch>
+
+git checkout --orphan empty-branch #create empty branch without any history data
+
+git reset --soft origin/<branch> #reset unpushed commits
+git reset --hard origin/<branch>
+
+git reset --soft HEAD~1 #reset one commit back
+git reset --hard HEAD~1
+
+git fetch <remote_branch> #Update your branch when the original branch from official repository has been updated
+
+git rm -rf . #remove all stashed files
+
+git commit --allow-empty -m "commit_message" #commit empty
+
+git push origin <branch>:<remote_branch> #overwrite remote branch with local
+```
+
+[Commands docs](https://www.atlassian.com/git/tutorials/using-branches)
+
+### Tag commit and push it
 
 ```bash
 git tag v1.7.7-beta.20 d43bab9
@@ -259,6 +325,33 @@ git push origin master --tags
 ```
 
 ## Bash
+
+### ZSH and oh-my-zsh - Make bash more intuitive and usefull
+
+> ZSH also called the Z shell, is an extended version of the Bourne Shell (sh), with plenty of new features, and support for plugins and themes. Since it’s based on the same shell as Bash, ZSH has many of the same features, and switching over is a breeze.
+
+Install `ZSH` and `Oh-My-ZSH` (freamwork for easly manage zsh - additional plugins and themes):
+
+```Bash
+brew install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" #install Oh-My-ZSH
+```
+
+### Add auto suggestions and shell syntax highlight
+
+You have to install two plugins: `zsh-autosuggestions` and `zsh-syntax-highlighting`.
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+vim ~/.zshrc
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+Now, you can add it to your zsh config file `~/.zshrc`.
+
+```bash
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+```
 
 ### Running multiple commands in one line in shell
 
