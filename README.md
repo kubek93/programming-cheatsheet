@@ -30,6 +30,10 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Manage files (create|modify|remove)](#manage-files-createmodifyremove)
     - [Manage services (start|stop)](#manage-services-startstop)
   - [npm](#npm)
+    - [What is scope and how to use it](#what-is-scope-and-how-to-use-it)
+    - [Private repository](#private-repository)
+    - [How to versionize packages](#how-to-versionize-packages)
+    - [How to use versions in `package.json`:](#how-to-use-versions-in-packagejson)
     - [Packages installation flags for `npm install` command](#packages-installation-flags-for-npm-install-command)
     - [Show installed npm packages](#show-installed-npm-packages)
     - [Print the folder where npm will install executables](#print-the-folder-where-npm-will-install-executables)
@@ -231,6 +235,43 @@ systemctl enable postgresq #run for example postgres database not only fot that 
 ```
 
 ## npm
+
+### What is scope and how to use it
+
+A scope allows you to create a package with the same name as a package created by another user or organization without conflict. The scope name is everything between the @ and the slash.
+
+- Unscoped packages are always public.
+
+You can setup different repository for specific scope using your `.npmrc` file:
+
+```
+@myscope:registry=https://mycustomregistry.example.org
+```
+
+or use command line for it: `npm config set @myco:registry http://reg.example.com`
+
+### Private repository
+
+Modify `.npmrc` file:
+
+```js
+registry=http://npm.differentpage.com/
+```
+
+### How to versionize packages
+
+| Code status |        Stage       | Rule | Example version |
+|:-:|:-----------------------:|:---:|:------:|
+| First release | New product | Start with 1.0.0	 | 1.0.0    |
+| Backward compatible bug fixes | Patch release | Increment the third digit | 1.0.1 |
+| Backward compatible new features | Minor release | Increment the middle digit and reset last digit to zero | 1.1.0    |
+| Changes that break backward compatibility | Major release | Increment the first digit and reset middle and last digits to zero | 2.0.0 |
+
+### How to use versions in `package.json`:
+
+- Patch releases: 1.0 or 1.0.x or ~1.0.4
+- Minor releases: 1 or 1.x or ^1.0.4
+- Major releases: * or x
 
 ### Packages installation flags for `npm install` command
 
