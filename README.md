@@ -6,6 +6,8 @@ This repo contains useful tips which are sometimes needed during programming.
 
 - [Programming Cheatsheet](#programming-cheatsheet)
   - [Table of Contents](#table-of-contents)
+  - [General Computer Problems](#general-computer-problems)
+    - [Convert movies to another format](#convert-movies-to-another-format)
   - [General Programmimng](#general-programmimng)
     - [Example of `README.md` file](#example-of-readmemd-file)
     - [Example of `CHANGELOG.md`](#example-of-changelogmd)
@@ -56,6 +58,30 @@ This repo contains useful tips which are sometimes needed during programming.
   - [Docker](#docker)
     - [Stop all containers](#stop-all-containers)
     - [Remove all containers](#remove-all-containers)
+
+## General Computer Problems
+
+### Convert movies to another format
+
+```sh
+brew install ffmpeg
+```
+
+Stream copy (-c copy) is like a "copy and paste" so the quality is preserved and the process is fast.
+
+```sh
+ffmpeg -i input.mov -c copy output.mp4
+ffmpeg -i input.mov -vcodec h264 output.mp4 #copy and modify codec for better compression
+```
+
+This will convert the MOV to H.264 video and AAC audio:
+
+```sh
+ffmpeg -i input.mov -c:v libx264 -c:a aac -vf format=yuv420p -movflags +faststart output.mp4
+```
+
+[ffmpeg homebrew](https://formulae.brew.sh/formula/ffmpeg)
+[ffmpeg docs](https://ffmpeg.org/)
 
 ## General Programmimng
 
