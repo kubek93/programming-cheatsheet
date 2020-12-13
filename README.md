@@ -14,6 +14,8 @@ This repo contains useful tips which are sometimes needed during programming.
     - [What are the different kinds of cases](#what-are-the-different-kinds-of-cases)
   - [Mac OS](#mac-os)
     - [Zip file/folder with password](#zip-filefolder-with-password)
+    - [Show/hide hidden files](#showhide-hidden-files)
+    - [Delete all .DS_Store files](#delete-all-ds_store-files)
     - [Find and kill process](#find-and-kill-process)
   - [Firebase](#firebase)
     - [CLI Commands](#cli-commands)
@@ -32,11 +34,14 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Manage networks](#manage-networks)
     - [Manage files (create|modify|remove)](#manage-files-createmodifyremove)
     - [Manage services (start|stop)](#manage-services-startstop)
+  - [Javascript](#javascript)
+    - [How initialize eslint in project with predefined configuration](#how-initialize-eslint-in-project-with-predefined-configuration)
   - [npm](#npm)
+    - [How to use local npm package in another project](#how-to-use-local-npm-package-in-another-project)
     - [What is scope and how to use it](#what-is-scope-and-how-to-use-it)
     - [Private repository](#private-repository)
     - [How to versionize packages](#how-to-versionize-packages)
-    - [How to use versions in `package.json`:](#how-to-use-versions-in-packagejson)
+    - [How to use versions in `package.json`](#how-to-use-versions-in-packagejson)
     - [Packages installation flags for `npm install` command](#packages-installation-flags-for-npm-install-command)
     - [Show installed npm packages](#show-installed-npm-packages)
     - [Print the folder where npm will install executables](#print-the-folder-where-npm-will-install-executables)
@@ -44,7 +49,9 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Symlink a package folder](#symlink-a-package-folder)
   - [Git](#git)
     - [Popular commands](#popular-commands)
+    - [Overwrite master with empty project](#overwrite-master-with-empty-project)
     - [Tag commit and push it](#tag-commit-and-push-it)
+    - [How to change https to ssh authorization in existing repo](#how-to-change-https-to-ssh-authorization-in-existing-repo)
   - [Bash](#bash)
     - [ZSH and oh-my-zsh - Make bash more intuitive and usefull](#zsh-and-oh-my-zsh---make-bash-more-intuitive-and-usefull)
     - [Add auto suggestions and shell syntax highlight](#add-auto-suggestions-and-shell-syntax-highlight)
@@ -101,6 +108,21 @@ ffmpeg -i input.mov -c:v libx264 -c:a aac -vf format=yuv420p -movflags +faststar
 
 ```sh
 zip -er example.zip ./example-folder/*
+```
+
+### Show/hide hidden files
+
+```sh
+defaults write com.apple.finder AppleShowAllFiles YES; //or NO
+killall Finder
+```
+
+> You can also use keyboard shortcut `Shift + Command + .`
+
+### Delete all .DS_Store files
+
+```sh
+sudo find / -name .DS_Store -delete; killall Finder
 ```
 
 ### Find and kill process
@@ -267,7 +289,26 @@ python -m SimpleHTTPServer 80 #run python server which is smiler than apatche an
 systemctl enable postgresq #run for example postgres database not only fot that session but also after reboot machine
 ```
 
+## Javascript
+
+### How initialize eslint in project with predefined configuration
+
+```sh
+npm install eslint -g
+eslint --init
+```
+
 ## npm
+
+### How to use local npm package in another project
+
+For tests purposes you can add package to `package.json` from your local project folder:
+
+```json
+{
+  "global-functions": "file:../global-functions",
+}
+```
 
 ### What is scope and how to use it
 
@@ -277,7 +318,7 @@ A scope allows you to create a package with the same name as a package created b
 
 You can setup different repository for specific scope using your `.npmrc` file:
 
-```
+```sh
 @myscope:registry=https://mycustomregistry.example.org
 ```
 
@@ -295,12 +336,12 @@ registry=http://npm.differentpage.com/
 
 | Code status |        Stage       | Rule | Example version |
 |:-:|:-----------------------:|:---:|:------:|
-| First release | New product | Start with 1.0.0	 | 1.0.0    |
+| First release | New product | Start with 1.0.0 | 1.0.0    |
 | Backward compatible bug fixes | Patch release | Increment the third digit | 1.0.1 |
 | Backward compatible new features | Minor release | Increment the middle digit and reset last digit to zero | 1.1.0    |
 | Changes that break backward compatibility | Major release | Increment the first digit and reset middle and last digits to zero | 2.0.0 |
 
-### How to use versions in `package.json`:
+### How to use versions in `package.json`
 
 - Patch releases: 1.0 or 1.0.x or ~1.0.4
 - Minor releases: 1 or 1.x or ^1.0.4
@@ -391,12 +432,28 @@ git push origin <branch>:<remote_branch> #overwrite remote branch with local
 
 [Commands docs](https://www.atlassian.com/git/tutorials/using-branches)
 
+### Overwrite master with empty project
+
+```sh
+git branch -D master
+git checkout --orphan master
+git rm -rf .
+git commit --allow-empty -m "Initial commit"
+git push origin master -f
+```
+
 ### Tag commit and push it
 
 ```bash
 git tag v1.7.7-beta.20 d43bab9
 git push origin master --tags
 ```
+
+### How to change https to ssh authorization in existing repo
+
+Open file `config` from `.git` folder in you project repository: `code /project_name/.git/config`.
+
+Change url address from one to another.
 
 ## Bash
 
