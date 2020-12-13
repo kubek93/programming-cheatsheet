@@ -13,6 +13,7 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Example of `CHANGELOG.md`](#example-of-changelogmd)
     - [What are the different kinds of cases](#what-are-the-different-kinds-of-cases)
   - [Mac OS](#mac-os)
+    - [Zip file/folder with password](#zip-filefolder-with-password)
     - [Find and kill process](#find-and-kill-process)
   - [Firebase](#firebase)
     - [CLI Commands](#cli-commands)
@@ -95,6 +96,12 @@ ffmpeg -i input.mov -c:v libx264 -c:a aac -vf format=yuv420p -movflags +faststar
 - `Kebab Case` (Used for css) => `my-variable`
 
 ## Mac OS
+
+### Zip file/folder with password
+
+```sh
+zip -er example.zip ./example-folder/*
+```
 
 ### Find and kill process
 
