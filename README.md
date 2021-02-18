@@ -55,6 +55,7 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Overwrite master with empty project](#overwrite-master-with-empty-project)
     - [Tag commit and push it](#tag-commit-and-push-it)
     - [How to change https to ssh authorization in existing repo](#how-to-change-https-to-ssh-authorization-in-existing-repo)
+    - [Show linked remote repository](#show-linked-remote-repository)
   - [Bash](#bash)
     - [ZSH and oh-my-zsh - Make bash more intuitive and usefull](#zsh-and-oh-my-zsh---make-bash-more-intuitive-and-usefull)
     - [Add auto suggestions and shell syntax highlight](#add-auto-suggestions-and-shell-syntax-highlight)
@@ -477,6 +478,12 @@ git push origin master --tags
 Open file `config` from `.git` folder in you project repository: `code /project_name/.git/config`.
 
 Change url address from one to another.
+
+### Show linked remote repository
+
+```sh
+git remote show origin
+```
 
 ## Bash
 
