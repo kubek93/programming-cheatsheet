@@ -34,6 +34,9 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Manage networks](#manage-networks)
     - [Manage files (create|modify|remove)](#manage-files-createmodifyremove)
     - [Manage services (start|stop)](#manage-services-startstop)
+    - [How to find files matched to pattern](#how-to-find-files-matched-to-pattern)
+    - [How to remove found files](#how-to-remove-found-files)
+    - [How to save command results in file](#how-to-save-command-results-in-file)
   - [Javascript](#javascript)
     - [How initialize eslint in project with predefined configuration](#how-initialize-eslint-in-project-with-predefined-configuration)
   - [npm](#npm)
@@ -287,6 +290,26 @@ echo "tekst" >> new-file.txt #create file and save text at the bottom of file
 service apache2 start #start apache server
 python -m SimpleHTTPServer 80 #run python server which is smiler than apatche and can be run in every folder
 systemctl enable postgresq #run for example postgres database not only fot that session but also after reboot machine
+```
+
+### How to find files matched to pattern
+
+```sh
+find . -name "*edit*"
+```
+
+### How to remove found files
+
+```sh
+find . -name "*edit*" -delete
+# OR
+find . -name "*edit*" -exec rm -rf {} \;
+```
+
+### How to save command results in file
+
+```sh
+find . -name "*edit*" >> filename.txt
 ```
 
 ## Javascript
