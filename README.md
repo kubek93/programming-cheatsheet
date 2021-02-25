@@ -8,6 +8,8 @@ This repo contains useful tips which are sometimes needed during programming.
   - [Table of Contents](#table-of-contents)
   - [General Computer Problems](#general-computer-problems)
     - [Convert movies to another format](#convert-movies-to-another-format)
+  - [Browsers](#browsers)
+    - [Can I modify javascript bundle in firefox?](#can-i-modify-javascript-bundle-in-firefox)
   - [General Programmimng](#general-programmimng)
     - [Example of `README.md` file](#example-of-readmemd-file)
     - [Example of `CHANGELOG.md`](#example-of-changelogmd)
@@ -50,6 +52,7 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Popular commands](#popular-commands)
     - [Overwrite master with empty project](#overwrite-master-with-empty-project)
     - [Tag commit and push it](#tag-commit-and-push-it)
+    - [How to check number of commits by person](#how-to-check-number-of-commits-by-person)
     - [How to change https to ssh authorization in existing repo](#how-to-change-https-to-ssh-authorization-in-existing-repo)
   - [Bash](#bash)
     - [ZSH and oh-my-zsh - Make bash more intuitive and usefull](#zsh-and-oh-my-zsh---make-bash-more-intuitive-and-usefull)
@@ -82,6 +85,19 @@ ffmpeg -i input.mov -c:v libx264 -c:a aac -vf format=yuv420p -movflags +faststar
 
 [ffmpeg homebrew](https://formulae.brew.sh/formula/ffmpeg)
 [ffmpeg docs](https://ffmpeg.org/)
+
+## Browsers
+
+### Can I modify javascript bundle in firefox?
+
+You can do it in several ways:
+
+1. You should use javascript console to redefine functions.
+2. You can also use fiddler and intercept the code.
+3. You can use Firebug console, but is deprecated.
+4. You can use [WebReplay Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/WebReplay), but is deprecated.
+
+> Use `chrome` browser where modified files can be persisted storage.
 
 ## General Programmimng
 
@@ -440,6 +456,12 @@ git push origin master -f
 ```bash
 git tag v1.7.7-beta.20 d43bab9
 git push origin master --tags
+```
+
+### How to check number of commits by person
+
+```bash
+git shortlog -s -n | head -n 20
 ```
 
 ### How to change https to ssh authorization in existing repo
