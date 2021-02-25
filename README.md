@@ -22,6 +22,7 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Run local functions using different port](#run-local-functions-using-different-port)
   - [Linux](#linux)
     - [Linux Commands](#linux-commands)
+    - [Checkt the linux distribution](#checkt-the-linux-distribution)
     - [Envs](#envs)
     - [Folders structure](#folders-structure)
     - [xargs - Using subshell with xargs and docker](#xargs---using-subshell-with-xargs-and-docker)
@@ -157,6 +158,15 @@ firebase serve --only functions --port=9000
 [GO TO](/linux-commands.md) Linux Commands
 
 whoami,
+
+### Checkt the linux distribution
+
+```sh
+cat /etc/os-release
+# or
+cat /proc/version
+
+```
 
 ### Envs
 
