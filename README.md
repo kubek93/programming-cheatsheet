@@ -535,8 +535,10 @@ git remote show origin
 
 ### Change linked remote repository
 
+From https to ssl for example.
+
 ```sh
-ssh://git@stash.mrgreen.zone:7999/bib/iq-sports.git
+ssh://git@domain.com:7999/project_name
 ```
 
 ## Bash
