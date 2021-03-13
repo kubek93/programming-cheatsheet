@@ -4,6 +4,9 @@ This repo contains useful tips which are sometimes needed during programming.
 
 ## Table of Contents
 
+<details>
+<summary><b>Expand Table</b></summary>
+
 - [Programming Cheatsheet](#programming-cheatsheet)
   - [Table of Contents](#table-of-contents)
   - [General](#general)
@@ -27,6 +30,7 @@ This repo contains useful tips which are sometimes needed during programming.
   - [Linux](#linux)
     - [Linux Commands](#linux-commands)
     - [Checkt the linux distribution](#checkt-the-linux-distribution)
+    - [How to merge two or more mp3 files](#how-to-merge-two-or-more-mp3-files)
     - [Envs](#envs)
     - [Folders structure](#folders-structure)
     - [xargs - Using subshell with xargs and docker](#xargs---using-subshell-with-xargs-and-docker)
@@ -70,18 +74,27 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Stop all containers](#stop-all-containers)
     - [Remove all containers](#remove-all-containers)
 
+</details>
+
 ## General
 
 ### Google search queries
 
-`"what is javascript"` - Exact Match - Use quotes to force an exact-match search:
-`html AND css` - AND operator - AND operator will return only results related to both terms:
-`(javascript OR python) free course` - OR opeator - You can use the OR operator to get the results related to one of the search terms
-`javascript -css` - Minus operator - operator will exclude results that contain a term or phrase:
-`"how to start * in 6 months"` - Wildcard operator - You can use the (*) wildcards as placeholders, which will be replaced by any word or phrase.
-`site:freecodecamp.org` - Site operator - earch inside a single website.
-`filetype:pdf learn css` - Search by filetype - You can also use a very useful feature that helps to find a specific file type.
-`ecmascript 2016..2018` - Search for a range of numbers:
+- `"what is javascript"` - Exact Match - Use quotes to force an exact-match search:
+- `html AND css` - AND operator - AND operator will return only results related to both terms:
+- `(javascript OR python) free course` - OR opeator - You can use the OR operator to get the results related - to one of the search terms
+- `javascript -css` - Minus operator - operator will exclude results that contain a term or phrase:
+- `"how to start * in 6 months"` - Wildcard operator - You can use the (*) wildcards as placeholders, which will be replaced by any word or phrase.
+- `site:freecodecamp.org` - Site operator - earch inside a single website.
+- `filetype:pdf learn css` - Search by filetype - You can also use a very useful feature that helps to find a specific file type.
+- `ecmascript 2016..2018` - Search for a range of numbers.
+- `JavaScript|HTML|CSS filetype:pdf -"framework" site:edu` - Google search result for JavaScript PDF documents, limit search to a domain e.g .com, .edu, .org e.t.c
+
+Tips:
+
+You can use | in place of OR. e.g JavaScript | HTML
+
+The ext is also a substitute for filetype
 
 ## General Computer Problems
 
@@ -198,6 +211,15 @@ cat /etc/os-release
 cat /proc/version
 
 ```
+
+### How to merge two or more mp3 files
+
+```sh
+cat file1.mp3 > newfile.mp3
+cat file1.mp3 file2.mp3 file3.mp3 > newfile.mp3
+```
+
+> Only if MP3 files are recorded at the same bitrate.
 
 ### Envs
 
