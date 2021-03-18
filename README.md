@@ -66,6 +66,7 @@ This repo contains useful tips which are sometimes needed during programming.
     - [How to check number of commits by person](#how-to-check-number-of-commits-by-person)
     - [How to change https to ssh authorization in existing repo](#how-to-change-https-to-ssh-authorization-in-existing-repo)
     - [Show linked remote repository](#show-linked-remote-repository)
+    - [Change linked remote repository](#change-linked-remote-repository)
   - [Bash](#bash)
     - [ZSH and oh-my-zsh - Make bash more intuitive and usefull](#zsh-and-oh-my-zsh---make-bash-more-intuitive-and-usefull)
     - [Add auto suggestions and shell syntax highlight](#add-auto-suggestions-and-shell-syntax-highlight)
@@ -552,6 +553,14 @@ Change url address from one to another.
 
 ```sh
 git remote show origin
+```
+
+### Change linked remote repository
+
+From https to ssl for example.
+
+```sh
+ssh://git@domain.com:7999/project_name
 ```
 
 ## Bash
