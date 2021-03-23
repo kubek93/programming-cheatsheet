@@ -21,6 +21,8 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Show/hide hidden files](#showhide-hidden-files)
     - [Delete all .DS_Store files](#delete-all-ds_store-files)
     - [Find and kill process](#find-and-kill-process)
+  - [AWS](#aws)
+    - [Serverless Framework vs AWS Serverless Application Model (SAM)](#serverless-framework-vs-aws-serverless-application-model-sam)
   - [Firebase](#firebase)
     - [CLI Commands](#cli-commands)
     - [Run local functions using different port](#run-local-functions-using-different-port)
@@ -168,6 +170,17 @@ sudo find / -name .DS_Store -delete; killall Finder
 sudo lsof -i :3000
 kill -9 <PID> # kill -15 gives the process a chance to clean up after itself
 ```
+
+## AWS
+
+### Serverless Framework vs AWS Serverless Application Model (SAM)
+
+SAM on the other hand is an abstraction layer specifically for AWS using not only FaaS but also DynamoDB for storage and API Gateway for creating a serverless HTTP endpoint.
+
+The biggest difference is that Serverless is written to deploy FaaS (Function as a Service) functions to different providers.
+
+https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-local-start-lambda.html
+https://stackoverflow.com/questions/52228361/whats-the-difference-between-aws-sam-serverless-application-model-and-serverl
 
 ## Firebase
 
