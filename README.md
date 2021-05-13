@@ -31,7 +31,10 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Run local functions using different port](#run-local-functions-using-different-port)
   - [Linux](#linux)
     - [Linux Commands](#linux-commands)
-    - [Checkt the linux distribution](#checkt-the-linux-distribution)
+    - [How to check current user](#how-to-check-current-user)
+    - [Check current shell path](#check-current-shell-path)
+    - [Change the shell path from/to bash/zsh](#change-the-shell-path-fromto-bashzsh)
+    - [Check the linux distribution](#check-the-linux-distribution)
     - [How to merge two or more mp3 files](#how-to-merge-two-or-more-mp3-files)
     - [Envs](#envs)
     - [Folders structure](#folders-structure)
@@ -50,7 +53,12 @@ This repo contains useful tips which are sometimes needed during programming.
     - [How to save command results in file](#how-to-save-command-results-in-file)
   - [Javascript](#javascript)
     - [How initialize eslint in project with predefined configuration](#how-initialize-eslint-in-project-with-predefined-configuration)
+  - [Node.js](#nodejs)
+    - [How to read file content?](#how-to-read-file-content)
+    - [Default prettier configuration](#default-prettier-configuration)
   - [npm](#npm)
+    - [Package.json configuration](#packagejson-configuration)
+    - [Informations about npm package](#informations-about-npm-package)
     - [How to use local npm package in another project](#how-to-use-local-npm-package-in-another-project)
     - [What is scope and how to use it](#what-is-scope-and-how-to-use-it)
     - [Private repository](#private-repository)
@@ -61,6 +69,10 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Print the folder where npm will install executables](#print-the-folder-where-npm-will-install-executables)
     - [Try to run package from the nearest (or local project) executor](#try-to-run-package-from-the-nearest-or-local-project-executor)
     - [Symlink a package folder](#symlink-a-package-folder)
+    - [How to configure eslint?](#how-to-configure-eslint)
+    - [How to run a code after npm package installation?](#how-to-run-a-code-after-npm-package-installation)
+    - [How to set up registry url and/or @scoped registry link](#how-to-set-up-registry-url-andor-scoped-registry-link)
+    - [How to set up files which should be included in npm package](#how-to-set-up-files-which-should-be-included-in-npm-package)
   - [Git](#git)
     - [Popular commands](#popular-commands)
     - [Overwrite master with empty project](#overwrite-master-with-empty-project)
@@ -69,6 +81,7 @@ This repo contains useful tips which are sometimes needed during programming.
     - [How to change https to ssh authorization in existing repo](#how-to-change-https-to-ssh-authorization-in-existing-repo)
     - [Show linked remote repository](#show-linked-remote-repository)
     - [Change linked remote repository](#change-linked-remote-repository)
+    - [How to revert specific Merge](#how-to-revert-specific-merge)
   - [Bash](#bash)
     - [ZSH and oh-my-zsh - Make bash more intuitive and usefull](#zsh-and-oh-my-zsh---make-bash-more-intuitive-and-usefull)
     - [Add auto suggestions and shell syntax highlight](#add-auto-suggestions-and-shell-syntax-highlight)
@@ -215,9 +228,43 @@ firebase serve --only functions --port=9000
 
 [GO TO](/linux-commands.md) Linux Commands
 
-whoami,
+### How to check current user
 
-### Checkt the linux distribution
+```sh
+# login name
+whoami
+echo $USER
+# or full information
+id
+# or user name
+id -F
+# rest of user checkers
+id -u  # returns UID
+id -un # returns username
+id -g  # returns primary (a.k.a. effictive) GID
+id -gn # returns primary Group Name
+# or currently logged users to system
+w
+```
+
+### Check current shell path
+
+```sh
+echo $0
+# or
+echo $SHELL
+```
+
+### Change the shell path from/to bash/zsh
+
+```sh
+chsh -s $(which bash)
+chsh -s $(which zsh)
+# or specific folder as shell
+chsh -s /bin/zsh
+```
+
+### Check the linux distribution
 
 ```sh
 cat /etc/os-release
@@ -397,9 +444,47 @@ find . -name "*edit*" >> filename.txt
 ```sh
 npm install eslint -g
 eslint --init
+
+# or
+
+npm install eslit --save-dev
+./node_modules/.bin/eslint --init
+```
+
+## Node.js
+
+### How to read file content?
+
+```js
+const fs = require('fs-extra');
+
+const fileContent = await fs.readFile('../usage-instruction.txt', 'utf8');
+```
+
+### Default prettier configuration
+
+```json
+{
+    "printWidth": 120,
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": true,
+    "arrowParens": "avoid"
+}
 ```
 
 ## npm
+
+### Package.json configuration
+
+> https://docs.npmjs.com/cli/v7/configuring-npm/package-json#main
+
+### Informations about npm package
+
+```sh
+npm info package-name
+```
 
 ### How to use local npm package in another project
 
@@ -496,6 +581,47 @@ $(npm bin)/package_name
 npm link package_name
 ```
 
+### How to configure eslint?
+
+The easiest way to install eslint configuration is run command:
+
+```sh
+./node_modules/.bin/eslint --init
+```
+
+### How to run a code after npm package installation?
+
+You can set up command postinstall in `scripts` property inside of package.json file:
+
+```json
+{
+  "scripts": {
+      "postinstall": "node bin/index.js"
+  }
+}
+```
+
+> https://docs.npmjs.com/cli/v7/using-npm/scripts#npm-ci
+
+### How to set up registry url and/or @scoped registry link
+
+```sh
+npm config set registry https://registry.npmjs.org
+npm config get @company_name:registry
+npm config set @company_name:registry https://artifactory.company.page/artifactory/api/npm/npm/
+npm install -g @company_name/package-name
+```
+
+### How to set up files which should be included in npm package
+
+The optional files field is an array of file patterns that describes the entries to be included when your package is installed as a dependency. File patterns follow a similar syntax to .gitignore, but reversed: including a file, directory, or glob pattern (*, **/*, and such) will make it so that file is included in the tarball when it's packed. Omitting the field will make it default to ["*"], which means it will include all files.
+
+Some special files and directories are also included or excluded regardless of whether they exist in the files array (see below).
+
+You can also provide a .npmignore file in the root of your package or in subdirectories, which will keep files from being included. At the root of your package it will not override the "files" field, but in subdirectories it will. The .npmignore file works just like a .gitignore. If there is a .gitignore file, and .npmignore is missing, .gitignore's contents will be used instead.
+
+> https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files
+
 ## Git
 
 ### Popular commands
@@ -574,6 +700,14 @@ From https to ssl for example.
 
 ```sh
 ssh://git@domain.com:7999/project_name
+```
+
+### How to revert specific Merge
+
+```sh
+git fetch origin
+git checkout origin/feature/name-of-branch -b feature/name-of-branch
+git revert -m 1 b76a5f1f5d3b323679e466a1a1d
 ```
 
 ## Bash
