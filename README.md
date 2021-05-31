@@ -54,6 +54,7 @@ This repo contains useful tips which are sometimes needed during programming.
   - [Javascript](#javascript)
     - [How initialize eslint in project with predefined configuration](#how-initialize-eslint-in-project-with-predefined-configuration)
   - [Node.js](#nodejs)
+    - [How to create executable node.js file](#how-to-create-executable-nodejs-file)
     - [How to read file content?](#how-to-read-file-content)
     - [Default prettier configuration](#default-prettier-configuration)
   - [npm](#npm)
@@ -64,6 +65,7 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Private repository](#private-repository)
     - [How to versionize packages](#how-to-versionize-packages)
     - [How to use versions in `package.json`](#how-to-use-versions-in-packagejson)
+    - [You can set up version of package](#you-can-set-up-version-of-package)
     - [Packages installation flags for `npm install` command](#packages-installation-flags-for-npm-install-command)
     - [Show installed npm packages](#show-installed-npm-packages)
     - [Print the folder where npm will install executables](#print-the-folder-where-npm-will-install-executables)
@@ -453,6 +455,14 @@ npm install eslit --save-dev
 
 ## Node.js
 
+### How to create executable node.js file
+
+Add to the top of file:
+
+```js
+#!/usr/bin/env node
+```
+
 ### How to read file content?
 
 ```js
@@ -532,6 +542,29 @@ registry=http://npm.differentpage.com/
 - Patch releases: 1.0 or 1.0.x or ~1.0.4
 - Minor releases: 1 or 1.x or ^1.0.4
 - Major releases: * or x
+
+### You can set up version of package
+
+You can setup version of the package directly from npm repository.
+
+Examples:
+
+```sh
+# npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
+npm version patch
+npm version minor
+npm version major
+# and combinations with preword "pre"
+npm version prepatch
+npm version preminor
+npm version premajor
+```
+
+after that you should deploy npm package into the repository:
+
+```sh
+npm publish
+```
 
 ### Packages installation flags for `npm install` command
 
@@ -666,6 +699,7 @@ git branch -D master
 git checkout --orphan master
 git rm -rf .
 git commit --allow-empty -m "Initial commit"
+git merge another-master --allow-unrelated-histories
 git push origin master -f
 ```
 
