@@ -70,7 +70,7 @@ This repo contains useful tips which are sometimes needed during programming.
     - [Show installed npm packages](#show-installed-npm-packages)
     - [Print the folder where npm will install executables](#print-the-folder-where-npm-will-install-executables)
     - [Try to run package from the nearest (or local project) executor](#try-to-run-package-from-the-nearest-or-local-project-executor)
-    - [Symlink a package folder](#symlink-a-package-folder)
+    - [Link developement package to the project](#link-developement-package-to-the-project)
     - [How to configure eslint?](#how-to-configure-eslint)
     - [How to run a code after npm package installation?](#how-to-run-a-code-after-npm-package-installation)
     - [How to set up registry url and/or @scoped registry link](#how-to-set-up-registry-url-andor-scoped-registry-link)
@@ -606,13 +606,23 @@ $(npm bin)/package_name
 
 [run-locally-installed-npm-packages-without-global-install](https://www.rockyourcode.com/run-locally-installed-npm-packages-without-global-install/)
 
-### Symlink a package folder
+### Link developement package to the project
 
-[?] copy package from project to global npm packages
+Copy package from developement npm package into final project:
 
 ```bash
-npm link package_name
+npm link #run in npm package
+npm link @scope/package-name #run in project
 ```
+
+After developement process unlink package using:
+
+```sh
+npm unlink --no-save @scope/package-name #clear linked packages in project
+npm unlink #clear npm links
+```
+
+> You can always check if package in linked correctly looking into node_modules.
 
 ### How to configure eslint?
 
