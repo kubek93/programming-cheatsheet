@@ -558,6 +558,9 @@ npm version major
 npm version prepatch
 npm version preminor
 npm version premajor
+# or alfa or beta tags
+npm version preminor --preid alfa
+npm version prerelease --preid=beta
 ```
 
 after that you should deploy npm package into the repository:
